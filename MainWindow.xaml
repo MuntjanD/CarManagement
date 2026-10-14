@@ -1,0 +1,69 @@
+﻿<Window x:Class="CarManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Car Manager" Height="600" Width="900">
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Кнопки -->
+            <RowDefinition Height="Auto"/>
+            <!-- Поиск + фильтр -->
+            <RowDefinition Height="*"/>
+            <!-- Таблица -->
+            <RowDefinition Height="Auto"/>
+            <!-- Статус -->
+        </Grid.RowDefinitions>
+
+        <!-- Кнопки -->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+            <Button Content="Add" Width="80" Margin="5" Click="Add_Click"/>
+            <Button Content="Edit" Width="80" Margin="5" Click="Edit_Click"/>
+            <Button Content="Delete" Width="80" Margin="5" Click="Delete_Click"/>
+            <Button Content="Generate" Width="100" Margin="5" Click="Generate_Click"/>
+            <Button Content="Open Browser" Click="OpenBrowser_Click"/>
+
+        </StackPanel>
+
+        <!-- Поиск и фильтр -->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="0,0,0,10">
+            <TextBox x:Name="SearchBox" Width="200" Margin="5" TextChanged="SearchBox_TextChanged"/>
+            <ComboBox x:Name="EngineFilter" Width="150" Margin="5" SelectionChanged="EngineFilter_SelectionChanged" SelectedValuePath="Content">
+                <ComboBoxItem Content="All"/>
+                <ComboBoxItem Content="Diesel"/>
+                <ComboBoxItem Content="Petrol"/>
+                <ComboBoxItem Content="Hybrid"/>
+                <ComboBoxItem Content="Electric"/>
+            </ComboBox>
+        </StackPanel>
+
+        <!-- Таблица -->
+        <DataGrid x:Name="CarsGrid"
+                  Grid.Row="2"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  MouseDoubleClick="CarsGrid_MouseDoubleClick"
+                  Margin="0,0,0,10">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="50"/>
+                <DataGridTextColumn Header="Number Plate" Binding="{Binding NumberPlate}" Width="100"/>
+                <DataGridTextColumn Header="Brand" Binding="{Binding Brand}" Width="100"/>
+                <DataGridTextColumn Header="Model" Binding="{Binding Model}" Width="100"/>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}" Width="70"/>
+                <DataGridTextColumn Header="Engine Type" Binding="{Binding EngineType}" Width="100"/>
+                <DataGridTextColumn Header="Volume (L)" Binding="{Binding EngineVolume}" Width="100"/>
+                <DataGridTextColumn Header="kW" Binding="{Binding Kilowatts}" Width="70"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Статус -->
+        <TextBlock x:Name="StatusText"
+                   Grid.Row="3"
+                   FontWeight="Bold"
+                   Foreground="Gray"
+                   HorizontalAlignment="Left"
+                   Margin="5"/>
+    </Grid>
+</Window>

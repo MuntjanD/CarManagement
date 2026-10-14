@@ -1,0 +1,51 @@
+﻿<Window x:Class="CarManagement.CarDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Car Details" Height="600" Width="800">
+
+    <Grid Margin="20">
+        <TabControl x:Name="Tabs">
+            <TabItem Header="Parts">
+                <StackPanel Margin="10">
+                    <Button Content="Add Part" Click="AddPart_Click"/>
+                    <DataGrid x:Name="PartsGrid" Margin="0,10,0,0" AutoGenerateColumns="True"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Car Info">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Number Plate:"/>
+                    <TextBlock x:Name="PlateText" FontWeight="Bold"/>
+
+                    <TextBlock Text="Brand:" Margin="0,10,0,0"/>
+                    <TextBlock x:Name="BrandText" FontWeight="Bold"/>
+
+                    <TextBlock Text="Model:" Margin="0,10,0,0"/>
+                    <TextBlock x:Name="ModelText" FontWeight="Bold"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Maintenance">
+                <StackPanel Margin="10">
+                    <Button Content="Add Maintenance" Click="AddMaintenance_Click"/>
+                    <DataGrid x:Name="MaintenanceGrid" Margin="0,10,0,0"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Work History">
+                <StackPanel Margin="10">
+                    <Button Content="Add Work" Click="AddWork_Click"/>
+                    <DataGrid x:Name="WorkGrid" Margin="0,10,0,0"/>
+                </StackPanel>
+            </TabItem>
+
+            <TabItem Header="Invoice">
+                <StackPanel Margin="10">
+                    <Button Content="Generate Invoice" Click="GenerateInvoice_Click"/>
+                    <DataGrid x:Name="InvoiceGrid" Margin="0,10,0,0"/>
+                </StackPanel>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
