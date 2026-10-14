@@ -1,17 +1,5 @@
 # AI Prompt Log — Beginner Prompts for CarManagement
 
-Purpose
-- Short, copy-paste AI prompts for a newbie or intern working on the CarManagement WPF app (C# + XAML).
-- Each prompt is targeted to common tasks: running the app, fixing UI bugs, adding features, and writing small tests or PRs.
-
-How to use
-- Copy one prompt exactly (or replace parts in <>), paste into your AI assistant, and run.
-- After applying changes, add a short log entry using the template at the bottom.
-
-Entry template (one-line)
-- Date: YYYY-MM-DD | Role: Newbie | Prompt-used: short title | Commit: message or link
-
-Project-specific prompts (copy-paste)
 
 1) Quick project overview & run instructions
 "I am new. Explain in one paragraph what the CarManagement project is (based on files MainWindow.xaml, CarManagement.csproj, Part.cs), and give me 3 ways to run or debug it locally (Visual Studio, dotnet CLI if supported, and opening the .csproj). Mention which file to open first to see the UI (MainWindow.xaml)."
